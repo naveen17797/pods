@@ -303,6 +303,20 @@ class PodsField_Pick extends PodsField {
 				'type'           => 'boolean',
 				'default'        => 1,
 			],
+			static::$type . '_load_data_via_rest_api'           => [
+					'label'          => __( 'Load data via rest api', 'pods' ),
+					'help'           => __( 'When enabled, this will load the data dynamically from REST API', 'pods' ),
+					'depends-on-any' => [
+							static::$type . '_format_single' => 'autocomplete',
+							static::$type . '_format_multi'  => 'autocomplete',
+					],
+					'excludes-on'    => [
+							static::$type . '_object' => array_merge( [ 'site', 'network' ], $this->simple_objects() ),
+					],
+					'type'           => 'boolean',
+					'default'        => 0,
+			],
+
 			static::$type . '_select_text'              => [
 				'label'            => __( 'Default Select Text', 'pods' ),
 				'help'             => __( 'This is the text used for the default "no selection" dropdown item. If left empty, it will default to "-- Select One --"', 'pods' ) . ' ' . $fallback_help,
