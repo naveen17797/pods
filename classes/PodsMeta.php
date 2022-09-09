@@ -128,7 +128,7 @@ class PodsMeta {
 			$core_loader_objects = [];
 		}
 
-		if ( ! isset( $core_loader_objects['taxonomies'] ) ) {
+		if ( ! isset( $core_loader_objects['taxonomies'] ) || empty( $core_loader_objects['taxonomies'] ) ) {
 			$core_loader_objects['taxonomies'] = [];
 
 			if ( ! empty( self::$taxonomies ) ) {
