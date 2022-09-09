@@ -244,6 +244,7 @@ class PodsMeta {
 		$type_map = [
 			'post_type'  => 'post_types',
 			'taxonomies' => 'taxonomies',
+			'taxonomy' => 'taxonomies',
 			'setting'    => 'settings',
 		];
 
