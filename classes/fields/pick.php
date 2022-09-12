@@ -1750,6 +1750,7 @@ class PodsField_Pick extends PodsField {
 
 		$value_ids = array_unique( array_filter( $value ) );
 
+
 		$related_data = pods_static_cache_get( $options['name'] . '/' . $options['id'], __CLASS__ . '/related_data' ) ?: [];
 
 		if ( ! empty( $related_data ) && isset( $related_data['current_ids_' . $id ], $related_data['remove_ids_' . $id ] ) ) {
@@ -2168,6 +2169,7 @@ class PodsField_Pick extends PodsField {
 	 * @return array An array of available items from a relationship field
 	 */
 	public function get_field_data( $field, $deprecated = null, $object_params = array() ) {
+
 		$options = array();
 
 		$is_field_object = $field instanceof Field;
@@ -2204,6 +2206,8 @@ class PodsField_Pick extends PodsField {
 			// Get object data.
 			$data = $this->get_object_data( $object_params );
 		}
+
+
 
 		return $data;
 
@@ -2291,6 +2295,8 @@ class PodsField_Pick extends PodsField {
 		}
 
 		$data  = apply_filters( 'pods_field_pick_object_data', null, $name, $value, $options, $pod, $id, $object_params );
+
+
 		$items = array();
 
 		if ( ! isset( $options[ static::$type . '_object' ] ) ) {
@@ -2838,6 +2844,7 @@ class PodsField_Pick extends PodsField {
 
 			$data = $items;
 		}
+
 
 		return $data;
 

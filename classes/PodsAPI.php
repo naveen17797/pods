@@ -6022,7 +6022,7 @@ class PodsAPI {
 		}
 
 		foreach ( $related_ids as $k => $related_id ) {
-			$related_ids[ $k ] = (int) $related_id;
+			$related_ids[ $k ] =  $related_id;
 		}
 
 		$related_ids = array_unique( array_filter( $related_ids ) );
